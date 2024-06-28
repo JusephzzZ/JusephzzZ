@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>MI FORMULARIO</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej. 1234567890" required><br><br>
+
+        <label for="correo">Correo Electrónico:</label><br>
+        <input type="email" id="correo" name="correo5" required><br><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+        <label for="tipo_usuario">Tipo de Usuario:</label><br>
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="">Seleccione...</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Proveedor">Proveedor</option>
+            <option value="Cliente">Cliente</option>
+            <option value="Usuario">Usuario</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+        <label for="archivo">Examinar:</label><br>
+        <input type="file" id="archivo" name="archivo">
+        <p id="archivoMensaje">No se ha seleccionado ningún archivo.</p><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+        
+    </form>
+
+    <script>
+        document.getElementById('archivo').addEventListener('change', function() {
+            var archivoInput = this;
+            var mensaje = document.getElementById('archivoMensaje');5
+            if (archivoInput.value) {
+                mensaje.textContent = archivoInput.files[0].name;
+            } else {
+                mensaje.textContent = 'No se ha seleccionado ningún archivo.';
+            }
+        });
+    </script>
+    <h2>FORMULARIO DE REGISTRO</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="Tipo_de_Documento">Tipo de documento:</label><br>
+        <select id="Tipo_de_Documento" name="Tipo_de_Documento" required>
+            <option value="">Seleccione...</option>
+            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+            <option value="Cedula de ciudadania">Cedula de ciudadanía</option>
+            <option value="Tarjeta extranjera">Cedula extranjera</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="Identificacion">Identificación:</label><br>
+        <input type="text" id="Identificacion" name="Identificacion" pattern="[0-9]{10}" placeholder="Ej. 1234567890" required><br><br>
+5
+        <label for="Nombre">Nombre Completo:</label><br>
+        <input type="text" id="Nombre" name="Nombre_Completo" placeholder="Nombre" required><br><br>
+
+        <label>Género:</label><br>
+        <input type="radio" id="hombre" name="genero" value="hombre">
+        <label for="hombre">Hombre</label><br>
+        <input type="radio" id="mujer" name="genero" value="mujer">
+        <label for="mujer">Mujer</label><br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+</html>
+
